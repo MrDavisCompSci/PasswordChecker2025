@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------
-# Username generator
+# Password checker
 # -------------------------------------------------------------------
 
 # -------------------------------------------------------------------
@@ -11,11 +11,28 @@
 # Subprograms
 # -------------------------------------------------------------------
 
-def checkPpassword(passwordToCheck):
+def checkPassword(passwordToCheck):
 
     # Add your code here
+    # length check
+    if len(passwordToCheck) < 8:
+        return False
     
-    return False
+    # capital letter check
+    capitalFound = False
+    index = 0
+    while not capitalFound and index < len(passwordToCheck):
+        if passwordToCheck[index].isupper():
+            capitalFound = True
+        index = index + 1 # OR index += 1
+    
+    if not capitalFound:
+        return False
+
+    # lower case check
+    
+
+    return True
 
 
 # -------------------------------------------------------------------
